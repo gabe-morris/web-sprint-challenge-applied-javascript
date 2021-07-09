@@ -24,8 +24,9 @@ const Header = (title, date, temp) => {
 }
 
 const headerAppender = (selector) => {
-  
-
+ const newHeader = Header('Title here','July 9th 2021','Whatever this is supposed to be')
+ const holder = document.querySelector(selector)
+ return holder.appendChild(newHeader)
 }
 
 export { Header, headerAppender }
