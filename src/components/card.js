@@ -1,13 +1,12 @@
 const Card = (article) => {
-  // TASK 5
-  // ---------------------
-  // Implement this function, which should return the markup you see below.
-  // It takes as its only argument an "article" object with `headline`, `authorPhoto` and `authorName` properties.
-  // The tags used, the hierarchy of elements and their attributes must match the provided markup exactly!
-  // The text inside elements will be set using their `textContent` property (NOT `innerText`).
-  // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
-  //
-  // <div class="card">
+  //create new elements
+ const card = document.createElement('div')
+ const headline = document.createElement('div')
+ const author = document.createElement('div')
+ const imgContainer = document.createElement('div')
+ const img = document.createElement('img')
+ const authName = document.createElement('span')
+// <div class="card">
   //   <div class="headline">{ headline }</div>
   //   <div class="author">
   //     <div class="img-container">
@@ -17,6 +16,25 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+  //create new classes
+  card.classList.add('card')
+  headline.classList.add('headline')
+  author.classList.add('author')
+  imgContainer.classList.add('img-container')
+  //establish hierarchy
+  card.appendChild(headline)
+  card.appendChild(author)
+  author.appendChild(imgContainer)
+  imgContainer.appendChild(img)
+  author.appendChild(authName)
+
+  //add Text Content and image source
+  headline.textContent = article.headline
+  img.src = article.authorPhoto
+  authName.textContent = article.authorName
+
+  card.addEventListener('click', console.log(article.headline))
+  return card
 }
 
 const cardAppender = (selector) => {
