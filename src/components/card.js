@@ -40,11 +40,10 @@ const Card = (article) => {
 }
 
 const cardAppender = (selector) => {
-  //Not sure where to go past this point, please explain
+//please explain how this is done
   const hold = document.querySelector(selector)
   axios.get(`http://localhost:5000/api/articles`)
   .then( response => {
-    console.log(response.data)
     })
 }
 export { Card, cardAppender }
